@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI</title>
+</head>
+<body>
+    <h3>Ny public IP is <span id="ip"></span></h3>
+
+    <script>
+    const apiUrl = "https://github.com/Hannessschool/wdb26-frontend.git";
+    //const apiUrl = "http://127.0.0.1:8080/api/ip";
+    async function getIp()
+    {
+      const res = await fetch(apiUrl)
+      const data = await res.json;
+
+      console.log(data);  
+      document.getElementById("ip").textContent = data.ip;
+    }
+    getIp();
+    </script>
+</body>
+</html>
