@@ -7,45 +7,15 @@
 </head>
 <body>
     <h1>Hotel rooms available</h1>
-    <pre>
-        {
-  "data": [
+    <script>
+    const apiUrl = "https://project-rahti-git-eerolaha-rahti.2.rahtiapp.fi/rooms";
+    async function getIp()
     {
-      "id": 2001,
-      "name": "Standard Room",
-      "price": 79
-    },
-    {
-      "id": 2002,
-      "name": "Superior Room",
-      "price": 119
-    },
-    {
-      "id": 2003,
-      "name": "Deluxe Suite",
-      "price": 189
-    },
-    {
-      "id": 2004,
-      "name": "Executive Suite",
-      "price": 249
-    },
-    {
-      "id": 2005,
-      "name": "Presidential Suite",
-      "price": 499.99
+      const res = await fetch(apiUrl)
+      const data = await res.json();
+
+      console.log(data);  
+      document.getElementById("ip").textContent = JSON.stringify(data.data);
     }
-  ],
-  "links": [
-    {
-      "href": "https://fastapi-myproj.rahtiapp.fi/rooms"
-    }
-  ],
-  "debugInfo": {
-    "request": [],
-    "method": "GET"
-  }
-}
-    </pre>
 </body>
 </html>
