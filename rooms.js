@@ -8,9 +8,8 @@ async function getRooms() {
 
     for (room of rooms) {
         document.getElementById("room-list").innerHTML += `
-            <li>${room.room_number} - ${room.room_type} - ${room.price} €</li>
+            <li>${room.room_id} - ${room.room_name} - ${room.price} €</li>
         `;
     }
-    
 }
 getRooms();
