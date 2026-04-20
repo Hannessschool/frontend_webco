@@ -1,7 +1,7 @@
 const apiUrl = "http://127.0.0.1:8080";
 
 async function getRooms() {
-    const res = await fetch(`${apiUrl}/hotel-frontend/rooms`);
+    const res = await fetch(`${apiUrl}/rooms`);
     const rooms = await res.json();
 
     console.log(rooms)
@@ -9,7 +9,7 @@ async function getRooms() {
     /*tömma listan innan vi fyller på den igen*/
     document.getElementById("booking-list").innerHTML += "";    
 
-    for (b of bookings) {
+    for (const b of bookings) {
         document.getElementById("booking-list").innerHTML += `
             <li>${b.booking_id} - 
             ${b.start_date} -
@@ -28,11 +28,11 @@ async function getRooms() {
 
     console.log(rooms)
 
-    for (room of rooms) {
+    for (const r of rooms) {
         document.getElementById("room-list").innerHTML += `
-            <option value="${room.room_id}">${room.room_id} - 
-            ${room.room_name} - 
-            ${room.price} €
+            <option value="${r.room_id}">${r.room_id} - 
+            ${r.room_name} - 
+            ${r.price} €
             </option>
         `;
     }
@@ -45,7 +45,7 @@ async function getGuests() {
 
     console.log(guests);
 
-    for (g of guests) {
+    for (const g of guests) {
         document.getElementById("guest-list").innerHTML += `
             <option value="${g.guest_id}">
             ${g.guest_first_name} -
