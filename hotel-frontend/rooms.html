@@ -17,10 +17,18 @@
     Från datum <input type="date" id="from-date"><br>
     Till datum <input type="date" id="to-date"><br>
 
-    <button type="button" id="btn-save">Spara bokning</button>
+
+    <button type="button" id="save-booking">Spara bokning</button>
 
     <h2>Bokningar:</h2>
     <ul id="booking-list"></ul>
+
+    <label for="booking-id">Booking ID:</label>
+    <input type="number" id="booking-id"><br>
+
+    <label for="rating">Betyg:</label><br>
+    <input type="number" min="1" max="5" id="rating">
+    <button id="save-rating">Spara rating</button>
 
     <script src="rooms.js"></script>
 

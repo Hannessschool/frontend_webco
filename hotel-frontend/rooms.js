@@ -20,7 +20,23 @@ async function getRooms() {
 }
 getBookings();
 
+async function saveRatings() {
+    const booking_id = Number(document.getElementById("booking-id").value);
+    
+    const ratings = { 
+        ratings: Number(document.getElementById("rating").value)
+    }
+    const res = await fetch(`${apiUrl}/bookings/${booking_id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(ratings)
+    });
+    const data = await res.json();
 
+    console.log(data);
+    getRatings();
+}
+document.getElementById("save-rating").addEventListener("click", saveRatings);
 
 async function getRooms() {
     const res = await fetch(`${apiUrl}/rooms`);
@@ -74,5 +90,4 @@ async function saveBooking() {
     console.log(data);
     getBookings();
 }
-
-document.getElementById("btn-save").addEventListener("click", saveBooking);
+document.getElementById("save-booking").addEventListener("click", saveBooking);
