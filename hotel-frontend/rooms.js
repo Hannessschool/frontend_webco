@@ -23,7 +23,7 @@ getBookings();
 
 
 async function getRooms() {
-    const res = await fetch(`${apiUrl}/hotel-frontend/rooms`);
+    const res = await fetch(`${apiUrl}/rooms`);
     const rooms = await res.json();
 
     console.log(rooms)
