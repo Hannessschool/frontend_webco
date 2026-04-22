@@ -91,3 +91,17 @@ async function saveBooking() {
     getBookings();
 }
 document.getElementById("save-booking").addEventListener("click", saveBooking);
+
+async function stars(id, stars) {
+        const res = await fetch(`${apiUrl}/bookings/{booking_id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+            'X-API-KEY': api_key_header
+
+        },
+        const data = await json.data;
+
+    });
+    
+}
