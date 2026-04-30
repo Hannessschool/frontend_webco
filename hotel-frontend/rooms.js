@@ -96,12 +96,13 @@ async function stars(id, stars) {
         const res = await fetch(`${apiUrl}/bookings/{booking_id}`, {
         method: "PUT",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
             'X-API-KEY': api_key_header
 
         },
-        const data = await json.data;
+        body: JSON.stringify({stars: stars})
 
     });
-    
+    const data = await res.json();
+    console.log(data);
 }
